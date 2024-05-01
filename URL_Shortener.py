@@ -1,8 +1,13 @@
-from pyshorteners import Shortener
+# pip install pyshorteners
+# pip install pyperclip
 
-long_url = 'http://www.google.com'
+import pyshorteners
 
-API_Key = 'AIzaSyBBS...jXKIGh1fNU'
+url = input('Enter the url: ')
 
-url_shortener = Shortener('Google', api_key = API_Key)
-print ("Short URL is {}".format(url_shortener.short(long_url)))
+
+def shortenurl(url):
+    s = pyshorteners.Shortener()
+    print(s.tinyurl.short(url))
+
+shortenurl(url)
